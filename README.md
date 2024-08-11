@@ -2,9 +2,7 @@
 
 Extensiones para utilizar en AppInventor.  
 
-
 <BR>
-# Extensiones
 
 - **[Logs](Logs)**  
 Nos permite escribir mensajes en LogCat  
