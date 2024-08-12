@@ -1,3 +1,11 @@
+/*************************************************************
+ *  Autor: Fco. Javier Rodriguez Navarro
+ *  WEB: www.pinguytaz.net
+ *
+ *  Descripción: Extensión para generar mensajes de Log desde AppInventor.
+ * 
+ *  Version 1.0 Agosto 2024
+ **********************************************************/
 package pinguytaz.net.logs;
 
 // Importacion para darnos accesos a clases internas y anaotaciones AI2

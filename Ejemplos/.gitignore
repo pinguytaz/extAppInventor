@@ -1,0 +1,9 @@
+# Para no subir los DOC y Excell
+*.ods
+*.odt
+*.xcf
+build/
+lib/
+build.xml
+update-deps.sh
+upgrade-appinventor.sh

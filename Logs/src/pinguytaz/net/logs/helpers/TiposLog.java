@@ -1,3 +1,12 @@
+/*************************************************************
+ *  Autor: Fco. Javier Rodriguez Navarro
+ *  WEB: www.pinguytaz.net
+ *
+ *  Descripción: Clase de apoyo a Logs, que nos permite tener una enumeración de
+ *  los tipos de mensajes.
+ * 
+ *  Version 1.0 Agosto 2024
+ **********************************************************/
 package pinguytaz.net.logs.helpers;
 
 import com.google.appinventor.components.common.OptionList;
