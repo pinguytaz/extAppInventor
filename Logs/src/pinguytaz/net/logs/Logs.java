@@ -45,12 +45,18 @@ public class Logs extends AndroidNonvisibleComponent {
     }   
 
    // Funciones para poder poner la propiedad TAG
-   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING, defaultValue = "TAGPorDefecto")
    @SimpleProperty (category = PropertyCategory.BEHAVIOR, description="Retorna el nombre del TAG con el que se generan los LOG")
-   public String ElTag() {
+   public String Get_TAG() {
       return TAG;
    }
-   @SimpleProperty (category = PropertyCategory.BEHAVIOR, description="Pone el nombre del TAG con el que se generan los LOG")
+   @SimpleProperty (description="Pone el nombre del TAG con el que se generan los LOG")
+   public void Set_TAG(String tag) {
+       TAG=tag;
+   }
+
+   // Propiedad en el diseñador.
+   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING, defaultValue = "TAGPorDefecto")
+   @SimpleProperty (category = PropertyCategory.BEHAVIOR, description="Pone el nombre del TAG con el que se generan los LOG", userVisible = false)
    public void ElTag(String tag) {
        TAG=tag;
    }
