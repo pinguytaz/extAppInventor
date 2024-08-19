@@ -6,7 +6,7 @@
  * 
  *  Version 1.0 Agosto 2024
  **********************************************************/
-package pinguytaz.net.logs;
+package pinguytaz.net.utiles;
 
 // Importacion para darnos accesos a clases internas y anaotaciones AI2
 import com.google.appinventor.components.annotations.DesignerComponent;
@@ -23,7 +23,7 @@ import com.google.appinventor.components.runtime.ListView;
 import com.google.appinventor.components.common.ComponentCategory;
 
 // importacion propias
-import pinguytaz.net.logs.helpers.TiposLog;
+import pinguytaz.net.utiles.helpers.TiposLog;
 
 // Importacion de clases de android
 import android.util.Log; // Clase del API android para generar LOG

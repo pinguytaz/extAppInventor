@@ -1,6 +1,5 @@
 #/usr/bin
 
 #Leemos LogCat para una etiqueta concreta
-#TAG=TAGPorDefecto
-TAG=TAGListas
+TAG=TAGPorDefecto
 adb logcat -s $TAG:*

@@ -7,7 +7,7 @@
  * 
  *  Version 1.0 Agosto 2024
  **********************************************************/
-package pinguytaz.net.logs.helpers;
+package pinguytaz.net.utiles.helpers;
 
 import com.google.appinventor.components.common.OptionList;
 import com.google.appinventor.components.common.Default;
