@@ -3,7 +3,4 @@
 *.odt
 *.xcf
 build/
-lib/
-build.xml
-update-deps.sh
-upgrade-appinventor.sh
+out/
