@@ -1,0 +1,37 @@
+package nombredepaquete;
+
+// Importacion para darnos accesos a clases internas y anaotaciones AI2
+import com.google.appinventor.components.annotations.DesignerComponent;
+import com.google.appinventor.components.runtime.AndroidNonvisibleComponent;
+import com.google.appinventor.components.annotations.SimpleObject;
+import com.google.appinventor.components.runtime.ComponentContainer;
+import com.google.appinventor.components.common.ComponentCategory;
+import com.google.appinventor.components.annotations.SimpleFunction;
+
+// Importacion de librerias Android
+
+// Importacion de otras librerias
+
+
+// Descripcion de la extension
+@DesignerComponent(version = 1,
+                    category = ComponentCategory.EXTENSION,
+                    description = "Descipción de la extension",
+                    nonVisible = true,
+                    iconName = "")
+@SimpleObject(external = true)
+
+// Definimos la clase publica de nuestra extension
+public class UnaExtension extends AndroidNonvisibleComponent {
+
+    public UnaExtension(ComponentContainer container) {
+        super(container.$form());
+    }   
+
+  // Funciones de ejecución Log para dar un Log
+  @SimpleFunction(description = "Funcion tipos recoge y retorna una cadena")
+  public String UnaFuncion(String texto) {
+     String resultado = "Ejemplo -- " + texto + " --";
+     return resultado;
+  }
+}
