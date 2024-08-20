@@ -17,8 +17,8 @@ Funciones para codificar Strings, ya sean Hash como MD5 y SHA-256, conversiones(
 Tenemos un componente evento que captura las posibles excepciónes de las funciones:
 <CENTER><img src=Imagenes/Evento_OcurreUnError.png /></CENTER>  
   
-      - HASH (MD5 y SHA-256) a las que les pasamos el texto para que nos retorne una cadena con el HASH  
-<CENTER><img src=Imagenes/FuncionesHASH.png /></CENTER>
+       HASH (MD5 y SHA-256) a las que les pasamos el texto para que nos retorne una cadena con el HASH  
+<CENTER> <img src=Imagenes/FuncionesHASH.png /> </CENTER>
 <CENTER>MD5 16Bytes y SHA-256 32Bytes</CENTER>  
   
 
