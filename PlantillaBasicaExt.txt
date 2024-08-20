@@ -1,3 +1,11 @@
+/*************************************************************
+ *  Autor: Fco. Javier Rodriguez Navarro
+ *  WEB: www.pinguytaz.net
+ *
+ *  Descripción: Ponemos la descripcion de la extension
+ * 
+ *  Version 1.0 FECHA
+ **********************************************************/
 package nombredepaquete;
 
 // Importacion para darnos accesos a clases internas y anaotaciones AI2
@@ -9,6 +17,7 @@ import com.google.appinventor.components.common.ComponentCategory;
 import com.google.appinventor.components.annotations.SimpleFunction;
 
 // Importacion de librerias Android
+import android.util.Log; // Clase del API android para generar LOG
 
 // Importacion de otras librerias
 
@@ -28,7 +37,7 @@ public class UnaExtension extends AndroidNonvisibleComponent {
         super(container.$form());
     }   
 
-  // Funciones de ejecución Log para dar un Log
+  // Funciones de 
   @SimpleFunction(description = "Funcion tipos recoge y retorna una cadena")
   public String UnaFuncion(String texto) {
      String resultado = "Ejemplo -- " + texto + " --";
