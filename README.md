@@ -16,7 +16,7 @@ En la funcion Log() definiremos el texto a enviar y el tipo de log: Verbose, Deb
 **Codifica**  
 Funciones para codificar Strings, ya sean Hash como MD5 y SHA-256, conversiones(más adelante) a Base64 y Base 16 y encriptación(más adelante).  
 Tenemos un componente evento que captura las posibles excepciónes de las funciones:
-<center><img src=Imagenes/Evento_OcurreUnError.png /></p>
+<p align="center"><img src=Imagenes/Evento_OcurreUnError.png /></p>
   
 - **HASH: MD5(16 bytes) y SHA-256(32 bytes)** se les pasamos el texto y retorna la cadena con el HASH  
   
@@ -31,8 +31,9 @@ Tenemos un componente evento que captura las posibles excepciónes de las funcio
 <p align="center"> <img src=Imagenes/Encriptacion_AES.png /></p>  
   
 **Informa**  
-Propiedades con información del dispositivo, aplicación etc.
+Propiedades con información del dispositivo, aplicación etc.  
 <p align="center"> <img src=Imagenes/PropiedadesInformacion.png /></p>  
+  
 - **DEVICE, Fabricante, HOST, Hardware, ID, Marca, Modelo, NombrePlataforma, Producto**  
 - **Huella** Marca que identifica la compilación.  
 - **Parche_Seguridad** Parche de seguridad.  
