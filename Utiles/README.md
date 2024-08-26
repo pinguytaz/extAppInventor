@@ -11,7 +11,7 @@ En la funcion Log() definiremos el texto a enviar y el tipo de log: Verbose, Deb
 **Codifica**  
 Funciones para codificar Strings, ya sean Hash como MD5 y SHA-256, conversiones(más adelante) a Base64 y Base 16 y encriptación(más adelante).  
 Tenemos un componente evento que captura las posibles excepciónes de las funciones:
-<p align="center"><img src=.magenes/Evento_OcurreUnError.png /></p>
+<p align="center"><img src=Imagenes/Evento_OcurreUnError.png /></p>
   
 - **HASH: MD5(16 bytes) y SHA-256(32 bytes)** se les pasamos el texto y retorna la cadena con el HASH  
   
