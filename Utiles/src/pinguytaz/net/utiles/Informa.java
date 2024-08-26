@@ -29,7 +29,7 @@ import android.os.Build;
                     category = ComponentCategory.EXTENSION,
                     description = "Informaciones de dispositivo y aplicacion",
                     nonVisible = true,
-                    iconName = "")
+                    iconName = "aiwebres/LogoPingu.png")
 @SimpleObject(external = true)
 
 // Definimos la clase publica de nuestra extension
