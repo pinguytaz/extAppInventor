@@ -34,12 +34,12 @@ Tenemos un componente evento que captura las posibles excepciónes de las funcio
 Propiedades con información del dispositivo, aplicación etc.  
 <p align="center"> <img src=Imagenes/PropiedadesInformacion.png /></p>  
   
-- **DEVICE, Fabricante, HOST, Hardware, ID, Marca, Modelo, NombrePlataforma, Producto**  
+- **Device, Fabricante, Host, Hardware, Id, Marca, Modelo, NombrePlataforma, Producto**  
 - **Huella** Marca que identifica la compilación.  
-- **Parche_Seguridad** Parche de seguridad.  
-- **VERSION_SDK** Version del SO y API que utiliza.  
-- **VERSION_SDK_EnNumero** como antes pero en entero.  
-- **Version_Interna** La versión interna del sistema compilado.  
+- **ParcheSeguridad** Parche de seguridad.  
+- **VersionSdk** Version del SO y API que utiliza.  
+- **VersionSdkEnNumero** como antes pero en entero.  
+- **VersionInterna** La versión interna del sistema compilado.  
 
 <BR>
 

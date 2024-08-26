@@ -50,7 +50,7 @@ public class Informa extends AndroidNonvisibleComponent {
      return Build.BRAND;
   }
   @SimpleProperty()
-  public String DEVICE() {
+  public String Device() {
      return Build.DEVICE;
   }
 
@@ -63,11 +63,11 @@ public class Informa extends AndroidNonvisibleComponent {
      return Build.HARDWARE;
   }
   @SimpleProperty()
-  public String HOST() {
+  public String Host() {
      return Build.HOST;
   }
   @SimpleProperty()
-  public String ID() {
+  public String Id() {
      return Build.ID;
   }
   @SimpleProperty()
@@ -83,11 +83,11 @@ public class Informa extends AndroidNonvisibleComponent {
      return Build.PRODUCT;
   }
   @SimpleProperty()
-  public int VERSION_SDK_EnNumero() {
+  public int VersionSdkEnNumero() {
      return Build.VERSION.SDK_INT;
   }
   @SimpleProperty()
-  public String VERSION_SDK() {
+  public String VersionSdk() {
      int sdk = Build.VERSION.SDK_INT;
      switch (sdk) {
         case 1:
@@ -166,11 +166,11 @@ public class Informa extends AndroidNonvisibleComponent {
   }
 
   @SimpleProperty()
-  public String Version_Interna() {
+  public String VersionInterna() {
      return Build.VERSION.INCREMENTAL ;
   }
   @SimpleProperty()
-  public String Parche_Seguridad() {
+  public String ParcheSeguridad() {
      return Build.VERSION.SECURITY_PATCH ;
   }
 }
