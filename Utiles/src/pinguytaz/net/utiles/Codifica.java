@@ -57,7 +57,7 @@ public class Codifica extends AndroidNonvisibleComponent {
    // Funciones Hash.
    // MD5
    @SimpleFunction(description = "Funcion que convierte un String a un MD5")
-   public String Hash_MD5(String texto) {
+   public String HashMD5(String texto) {
        String resultado = "0102030405060708090A0B0C0D0E0F";
  
        try {
@@ -77,7 +77,7 @@ public class Codifica extends AndroidNonvisibleComponent {
 
    // SHA256
    @SimpleFunction(description = "Funcion que convierte un String a un Hash SHA256 (SHA2 de 256 y 64 rondas")
-   public String Hash_SH256(String texto) {
+   public String HashSHA256(String texto) {
        String resultado = "0102030405060708090A0B0C0D0E0F1112131415161718191A1B1C1D1E1F";
        try {
           MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
@@ -97,7 +97,7 @@ public class Codifica extends AndroidNonvisibleComponent {
  
    // Base16  a Hexadecimal
    @SimpleFunction(description = "Funcion que convierte un String en Hexadecimal")
-   public String CodiA_Hex(String texto) {
+   public String CodiAHex(String texto) {
        String resultado = "En Hexadecimal la cadena de texto";
        try {
           StringBuffer hexString = new StringBuffer();
@@ -110,7 +110,7 @@ public class Codifica extends AndroidNonvisibleComponent {
    } 
  
    @SimpleFunction(description = "Funcion que convierte un String HEX a cadena de caracteres")
-   public String CodiDe_Hex(String hex) {
+   public String CodiDeHex(String hex) {
        String resultado ="Datos en HEX";
        try {
           char[] ascii = new char[hex.length() / 2]; 
@@ -126,7 +126,7 @@ public class Codifica extends AndroidNonvisibleComponent {
  
    // Base64
    @SimpleFunction(description = "Funcion que convierte un String en Base 64")
-   public String CodiA_Base64(String texto) {
+   public String CodiABase64(String texto) {
       String resultado = "La Cadena";
       try {
          byte[] bytesTexto = texto.getBytes("UTF-8");
@@ -136,7 +136,7 @@ public class Codifica extends AndroidNonvisibleComponent {
       return resultado;
    } 
    @SimpleFunction(description = "Funcion que convierte de base 64 a String")
-   public String CodiDe_Base64(String base64) {
+   public String CodiDeBase64(String base64) {
       String resultado = "La cadena despues de 64";
       try {
          byte[] cadena = Base64.decode(base64, Base64.DEFAULT);
@@ -148,7 +148,7 @@ public class Codifica extends AndroidNonvisibleComponent {
 
    // Encriptación
    @SimpleFunction(description = "Realiza la encriptación en AES")
-   public String Encripta_AES(String textoACifrar, String clave, String salt) {
+   public String EncriptaAES(String textoACifrar, String clave, String salt) {
       try {
          // Generamos IV
          SecureRandom secureRandom = new SecureRandom();
@@ -182,7 +182,7 @@ public class Codifica extends AndroidNonvisibleComponent {
    } 
 
    @SimpleFunction(description = "Realiza la desencriptación en AES")
-   public String Desencripta_AES(String textoADescifrar, String clave, String salt) {
+   public String DesencriptaAES(String textoADescifrar, String clave, String salt) {
       try {
          // Lo primero es convertir HEX al array de bytes
          byte[] datosCifrados = new byte[textoADescifrar.length() / 2]; 
