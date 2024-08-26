@@ -36,11 +36,6 @@ Propiedades con información del dispositivo, aplicación etc.
 - **VersionSdkEnNumero** como antes pero en entero.  
 - **VersionInterna** La versión interna del sistema compilado.  
 
-<BR>
-
-_**[Ejemplos](Ejemplos)**_  
-Ejemplos de extensiones realizadas para los POST de https://www.pinguytaz.net  
-  
 <br><br>
 
 __Website__: <https://www.pinguytaz.net>
