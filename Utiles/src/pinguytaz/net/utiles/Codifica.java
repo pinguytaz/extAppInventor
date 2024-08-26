@@ -4,7 +4,7 @@
  *
  *  Descripción: Funciones de codificación: Hash: MD5, SHA-256 
  *                                          Codifica: Hexadecimal, Base64
- *                                          Proximo Encriptacion: XOR, ¿?
+ *                                          Encriptacion: AES
  * 
  *  Version 1.0 Agosto 2024
  **********************************************************/
@@ -21,13 +21,22 @@ import com.google.appinventor.components.annotations.SimpleEvent;
 import com.google.appinventor.components.runtime.EventDispatcher;
 
 // Importacion de librerias Android y propias java
-import java.security.MessageDigest;
+import java.security.MessageDigest;                // Para HASH
 import java.security.NoSuchAlgorithmException;
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.SecureRandom;
+import java.security.spec.KeySpec;
+import java.io.UnsupportedEncodingException;
+
 import android.util.Log; // Clase del API android para generar LOG
 import android.util.Base64;   // Para codificar a Base64
 
 // Importacion de otras librerias
-
 
 // Descripcion de la extension
 @DesignerComponent(version = 1,
@@ -136,7 +145,74 @@ public class Codifica extends AndroidNonvisibleComponent {
       return resultado;
    } 
 
+
+   // Encriptación
+   @SimpleFunction(description = "Realiza la encriptación en AES")
+   public String Encripta_AES(String textoACifrar, String clave, String salt) {
+      try {
+         // Generamos IV
+         SecureRandom secureRandom = new SecureRandom();
+         byte[] iv = new byte[16];
+         secureRandom.nextBytes(iv);
+         IvParameterSpec ivspec = new IvParameterSpec(iv);
+   
+         // Se genera clave AES con la clave,salt
+         SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+         KeySpec spec = new PBEKeySpec(clave.toCharArray(), salt.getBytes(), 65536, 256);
+         SecretKey tmp = factory.generateSecret(spec);
+         SecretKeySpec secretKeySpec = new SecretKeySpec(tmp.getEncoded(), "AES");
+   
+         // Ciframos
+         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+         cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivspec);
+   
+         byte[] cipherText = cipher.doFinal(textoACifrar.getBytes("UTF-8"));
+         byte[] datosEncriptados = new byte[iv.length + cipherText.length];
+         System.arraycopy(iv, 0, datosEncriptados, 0, iv.length);
+         System.arraycopy(cipherText, 0, datosEncriptados, iv.length, cipherText.length);
+   
+         // Convertimos a HEX
+         StringBuffer hexString = new StringBuffer();
+         for (int i = 0;i<datosEncriptados.length;i++) {
+            hexString.append(String.format("%02x", (0xFF & datosEncriptados[i])));
+         }
+         return hexString.toString();
+      } catch(Exception e) { OcurreUnError(e.getMessage(),"En Encripta_AES" ); }
+      return "";
+   } 
+
+   @SimpleFunction(description = "Realiza la desencriptación en AES")
+   public String Desencripta_AES(String textoADescifrar, String clave, String salt) {
+      try {
+         // Lo primero es convertir HEX al array de bytes
+         byte[] datosCifrados = new byte[textoADescifrar.length() / 2]; 
+         for (int i = 0; i < textoADescifrar.length(); i += 2) {  // Avanzamos de 2 en dos.
+            String hexByte = textoADescifrar.substring(i, i + 2);  // Obtiene dos caracteres
+            int asciiValue = Integer.parseInt(hexByte, 16); // Convertir hexadecimal a decimal
+            datosCifrados[i / 2] = (byte) asciiValue; // Convertir decimal a caracter ASCII
+         }
+
+         byte[] iv = new byte[16];
+         System.arraycopy(datosCifrados, 0, iv, 0, iv.length);
+         IvParameterSpec ivspec = new IvParameterSpec(iv);
+
+         SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+         KeySpec spec = new PBEKeySpec(clave.toCharArray(), salt.getBytes(), 65536, 256);
+         SecretKey tmp = factory.generateSecret(spec);
+         SecretKeySpec secretKeySpec = new SecretKeySpec(tmp.getEncoded(), "AES");
  
+         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+         cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivspec);
+
+         byte[] cipherText = new byte[datosCifrados.length - 16];
+         System.arraycopy(datosCifrados, 16, cipherText, 0, cipherText.length);
+
+         byte[] textoDescifrado = cipher.doFinal(cipherText);
+         return new String(textoDescifrado, "UTF-8");
+      } catch(Exception e) { OcurreUnError(e.getMessage(),"En Desencripta_AES" ); }
+      return "";
+   } 
+
    // Evento información de error
    @SimpleEvent(description = "Dispara evento de Error")
    public void OcurreUnError(String error, String funcion) {

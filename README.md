@@ -22,11 +22,23 @@ Tenemos un componente evento que captura las posibles excepciónes de las funcio
   
 <p align="center"> <img src=Imagenes/FuncionesHASH.png /></p>
   
-- **Codifica Hexadecimal y Base 64** Se pasa la cadena de texto o HEXadecimal/Base64  
+- **Codifica Hexadecimal y Base 64** se pasa la cadena de texto o HEXadecimal/Base64  
   
 <p align="center"> <img src=Imagenes/CodificacionHEX.png /></p>  
 <p align="center"> <img src=Imagenes/CodificacionBase64.png /></p>  
   
+- **Encripta** Nos permite encriptar/Desencriptar mediante AES, se le pasa la cadena de Texto a encriptar o la cadena HEX de un encriptado, asi como la clave y el salt.  
+<p align="center"> <img src=Imagenes/Encriptacion_AES.png /></p>  
+  
+**Informa**  
+Propiedades con información del dispositivo, aplicación etc.
+<p align="center"> <img src=Imagenes/PropiedadesInformacion.png /></p>  
+- **DEVICE, Fabricante, HOST, Hardware, ID, Marca, Modelo, NombrePlataforma, Producto**  
+- **Huella** Marca que identifica la compilación.  
+- **Parche_Seguridad** Parche de seguridad.  
+- **VERSION_SDK** Version del SO y API que utiliza.  
+- **VERSION_SDK_EnNumero** como antes pero en entero.  
+- **Version_Interna** La versión interna del sistema compilado.  
 
 <BR>
 
